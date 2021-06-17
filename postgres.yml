@@ -5,7 +5,8 @@ metadata:
   namespace: openproject
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
+  storageClassName: efs-sc
   resources:
     requests:
       storage: 10Gi
@@ -36,10 +37,10 @@ spec:
         - name: POSTGRES_PASSWORD
           value: keyboardcat
         volumeMounts:
-          - mountPath: /var/lib/postgresql/data
-            name: pgdata
+          - mountPath: /var/lib/postgresql/pgdata
+            name: efs-pvc-pg
       volumes:
-        - name: pgdata
+        - name: efs-pvc-pg
           persistentVolumeClaim:
             claimName: pgdata
 ---

@@ -14,9 +14,9 @@ spec:
       name: seeder
       volumeMounts:
         - mountPath: /var/openproject/assets
-          name: opdata
+          name: efs-pvc-op
   restartPolicy: OnFailure
   volumes:
-    - name: opdata
+    - name: efs-pvc-op
       persistentVolumeClaim:
         claimName: opdata

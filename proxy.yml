@@ -31,9 +31,10 @@ metadata:
   name: proxy
   namespace: openproject
 spec:
-  type: NodePort
+  type: LoadBalancer #NodePort
   selector:
     app: proxy
   ports:
   - nodePort: 30457
+    targetPort: 80
     port: 80

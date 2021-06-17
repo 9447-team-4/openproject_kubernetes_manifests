@@ -23,8 +23,8 @@ spec:
             name: environment
         volumeMounts:
           - mountPath: /var/openproject/assets
-            name: opdata
+            name: efs-pvc-op
       volumes:
-        - name: opdata
+        - name: efs-pvc-op
           persistentVolumeClaim:
             claimName: opdata

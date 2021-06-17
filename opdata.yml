@@ -5,7 +5,9 @@ metadata:
   namespace: openproject
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
+
+  storageClassName: efs-sc
   resources:
     requests:
       storage: 10Gi
